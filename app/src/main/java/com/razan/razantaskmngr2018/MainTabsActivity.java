@@ -19,6 +19,10 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.razan.razantaskmngr2018.taskfragment.MyTasksFragment;
+import com.razan.razantaskmngr2018.taskfragment.ProfileFragment;
+import com.razan.razantaskmngr2018.taskfragment.TasksHistoryFragment;
+
 public class MainTabsActivity extends AppCompatActivity {
 
     /**
@@ -130,6 +134,9 @@ public class MainTabsActivity extends AppCompatActivity {
      * one of the sections/tabs/pages.
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
+        MyTasksFragment myTasksFragment;
+        TasksHistoryFragment historyFragment;
+        ProfileFragment profileFragment;
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -137,8 +144,21 @@ public class MainTabsActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
+           if (position==0) {
+               if (myTasksFragment == null)
+                   myTasksFragment = new MyTasksFragment();
+               return myTasksFragment;
+           }
+            if (position==1) {
+                if (historyFragment == null)
+                   historyFragment = new TasksHistoryFragment();
+                return historyFragment;
+            }
+            if (position==2) {
+                if (profileFragment == null)
+                    profileFragment = new ProfileFragment();
+                return profileFragment;
+            }
             return PlaceholderFragment.newInstance(position + 1);
         }
 
@@ -146,6 +166,17 @@ public class MainTabsActivity extends AppCompatActivity {
         public int getCount() {
             // Show 3 total pages.
             return 3;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+           if (position==0)
+               return "tasks";
+            if (position==1)
+                return "history";
+            if (position==2)
+                return "profile";
+            return "noName";
         }
     }
 }
