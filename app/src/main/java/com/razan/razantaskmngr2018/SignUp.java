@@ -39,15 +39,47 @@ public class SignUp extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(SignUp.this,LogInActivity.class);
-                startActivity(i);
+                dataHandler();
+
             }
         });
         //3.
         auth=FirebaseAuth.getInstance();
         user=auth.getCurrentUser();//
     }
+    // get email and passwor from the field and try to create new user
+    private void dataHandler()
+    {
+        boolean isk= true; // if alla the fields filled well
+        String email= etEmail.getText().toString();
+        String password= etPassword.getText().toString();
+        String fName= etFirst.getText().toString();
+        String lName= etLast.getText().toString();
+        String phone= Phone.getText().toString();
+        boolean isok = false;
+        if (email.length()<4 || email.indexOf('@')<0 || email.indexOf('.')<0)
+        {
+            etEmail.setError("worng Email");
+            isok=false;
+        }
+        if (password.length()<8)
+        {
+            etPassword.setError(" Have to be at least 8 char");
+            isok=false;
+        }
+        if (isok)
+        {
+            creatAcount(email, password);
+        }
+
+    }
     //4.
+
+    /**
+     * create firebase user using email & password
+     * @param email user email
+     * @param passw user password
+     */
     private void creatAcount (String email,String passw){
         auth.createUserWithEmailAndPassword(email, passw).addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
             @Override
