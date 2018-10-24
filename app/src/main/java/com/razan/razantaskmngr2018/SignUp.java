@@ -50,7 +50,7 @@ public class SignUp extends AppCompatActivity {
     // get email and passwor from the field and try to create new user
     private void dataHandler()
     {
-        boolean isk= true; // if alla the fields filled well
+        boolean isOk= true; // if alla the fields filled well
         String email= etEmail.getText().toString();
         String password= etPassword.getText().toString();
         String fName= etFirst.getText().toString();

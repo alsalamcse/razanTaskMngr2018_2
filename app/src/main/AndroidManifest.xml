@@ -21,7 +21,8 @@
             android:label="@string/title_activity_main_tabs"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LogInActivity" />
-        <activity android:name=".SignUp"></activity>
+        <activity android:name=".SignUp" />
+        <activity android:name=".AddTaskActivity"></activity>
     </application>
 
 </manifest>
