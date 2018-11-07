@@ -54,10 +54,11 @@ public class AddTaskActivity extends AppCompatActivity {
             mDay=c.get(Calendar.DAY_OF_MONTH);
             DatePickerDialog datePickerDialog= new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
-                public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                    etDueDate.setText(mDay+"-"+mMonth+"-"+mYear).show;
+                public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
+                    etDueDate.setText(dayOfMonth+"-"+monthOfYear+"-"+year);
                 }
-            })
+            }, mYear, mMonth , mDay);
+            datePickerDialog.show();
 
 
         }
