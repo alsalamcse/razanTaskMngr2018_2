@@ -11,8 +11,13 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.razan.razantaskmngr2018.data.MyTask;
+
 import java.sql.Date;
 import java.util.Calendar;
+import java.util.IllegalFormatCodePointException;
 
 public class AddTaskActivity extends AppCompatActivity {
     private EditText etTitle,etTask,etDueDate;
@@ -69,22 +74,37 @@ public class AddTaskActivity extends AppCompatActivity {
         boolean isOk= true; // if alla the fields filled well
         String title= etTitle.getText().toString();
         String task= etTask.getText().toString();
-        String dueDate= etDueDate.getText().toString();
+        String Date= etDueDate.getText().toString();
         String important=tvImportant.getText().toString();
         String neseccery = tvNeseccery.getText().toString();
         int important1=sB1.getProgress();
         int neseccery1=sB2.getProgress();
 
         boolean isok = false;
-        if (title.length()<4 || title.indexOf('@')<0 || title.indexOf('.')<0)
+        if (title.length()==0)
         {
-           etTitle.setError("worng Email");
+           etTitle.setError("Title can not be empty");
             isok=false;
         }
-        if (task.length()<8)
+        if (task.length()==0)
         {
-            etTask.setError(" Have to be at least 8 char");
+            etTask.setError(" Task can not be empty");
             isok=false;
+        }
+        if (isOk)
+        {
+            MyTask task1=new MyTask();
+            task1.setCreatedAt(new Date());
+            task1.setDueDate(new Date(Date));
+            task1.setText(task);
+            task1.setTitle(title);
+            task1.setImportant(important1);
+            task1.setNecessary(neseccery1);
+
+            FirebaseAuth auth=FirebaseAuth.getInstance();
+
+
+
         }
     }
 }
