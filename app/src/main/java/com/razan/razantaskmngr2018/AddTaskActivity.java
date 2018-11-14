@@ -102,7 +102,10 @@ public class AddTaskActivity extends AppCompatActivity {
             task1.setNecessary(neseccery1);
 
             FirebaseAuth auth=FirebaseAuth.getInstance();
-            task1.
+            task1.setOwner(auth.getCurrentUser().getEmail());
+
+            String key=
+             task1.setKey(key);
 
 
 
