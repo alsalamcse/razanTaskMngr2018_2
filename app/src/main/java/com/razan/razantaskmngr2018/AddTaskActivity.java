@@ -74,7 +74,7 @@ public class AddTaskActivity extends AppCompatActivity {
         boolean isOk= true; // if alla the fields filled well
         String title= etTitle.getText().toString();
         String task= etTask.getText().toString();
-        String Date= etDueDate.getText().toString();
+        String date= etDueDate.getText().toString();
         String important=tvImportant.getText().toString();
         String neseccery = tvNeseccery.getText().toString();
         int important1=sB1.getProgress();
@@ -95,13 +95,14 @@ public class AddTaskActivity extends AppCompatActivity {
         {
             MyTask task1=new MyTask();
             task1.setCreatedAt(new Date());
-            task1.setDueDate(new Date(Date));
+            task1.setDueDate(new Date(date));
             task1.setText(task);
             task1.setTitle(title);
             task1.setImportant(important1);
             task1.setNecessary(neseccery1);
 
             FirebaseAuth auth=FirebaseAuth.getInstance();
+            task1.
 
 
 
