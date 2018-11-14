@@ -55,6 +55,20 @@ public class MyTask {
         this.necessary = necessary;
     }
 
+    public Date getdueDate(Date dueDate){return dueDate;}
+
+    public void setdueDate(Date dueDate){this.dueDate = dueDate;}
+
+    public void getcreatedAt(Date createdAt){this.createdAt=createdAt;}
+
+    public void setcreatedAt(Date createdAt){this.createdAt=createdAt;}
+
+
+
+
+
+
+
     public Date getCreatedAt() {
         return createdAt;
     }
