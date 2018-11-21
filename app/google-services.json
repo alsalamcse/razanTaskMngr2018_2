@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "466260123606",
+    "firebase_url": "https://razantaskmngr2018.firebaseio.com",
+    "project_id": "razantaskmngr2018",
+    "storage_bucket": "razantaskmngr2018.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466260123606:android:fc35ad8bff80ceb8",
+        "android_client_info": {
+          "package_name": "com.razan.razantaskmngr2018"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "466260123606-sdtvappldfgqri6gujqhkjnn31s8ng9o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.razan.razantaskmngr2018",
+            "certificate_hash": "013f43c9a5d380c46de43c04644418dbe5d2a253"
+          }
+        },
+        {
+          "client_id": "466260123606-tadmofnvc5n3ampm2u01ekqshlr47ua5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-LH5ZvRb6I5KEl9UN_cGV24hbdRGgEt0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "466260123606-tadmofnvc5n3ampm2u01ekqshlr47ua5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

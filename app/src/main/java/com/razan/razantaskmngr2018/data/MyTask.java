@@ -12,6 +12,7 @@ public class MyTask {
     private Date dueDate;
     private String Owner;
 
+
     public MyTask() {
     }
 
@@ -55,19 +56,9 @@ public class MyTask {
         this.necessary = necessary;
     }
 
-    public Date getdueDate(Date dueDate){return dueDate;}
-
-    public void setdueDate(Date dueDate){this.dueDate = dueDate;}
-
-    public void getcreatedAt(Date createdAt){this.createdAt=createdAt;}
-
-    public void setcreatedAt(Date createdAt){this.createdAt=createdAt;}
-
-
-
-
-
-
+    public String getOwner() {
+        return Owner;
+    }
 
     public Date getCreatedAt() {
         return createdAt;

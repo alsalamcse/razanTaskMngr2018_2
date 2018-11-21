@@ -2,6 +2,7 @@ package com.razan.razantaskmngr2018;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,12 +11,16 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.razan.razantaskmngr2018.data.MyTask;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.Calendar;
 import java.util.IllegalFormatCodePointException;
 
@@ -74,7 +79,7 @@ public class AddTaskActivity extends AppCompatActivity {
         boolean isOk= true; // if alla the fields filled well
         String title= etTitle.getText().toString();
         String task= etTask.getText().toString();
-        String date= etDueDate.getText().toString();
+        String dueDate= etDueDate.getText().toString();
         String important=tvImportant.getText().toString();
         String neseccery = tvNeseccery.getText().toString();
         int important1=sB1.getProgress();
@@ -93,9 +98,9 @@ public class AddTaskActivity extends AppCompatActivity {
         }
         if (isOk)
         {
-            MyTask task1=new MyTask();
+            final MyTask task1=new MyTask();
             task1.setCreatedAt(new Date());
-            task1.setDueDate(new Date(date)) ;
+            task1.setDueDate(new Date(dueDate));
             task1.setText(task);
             task1.setTitle(title);
             task1.setImportant(important1);
@@ -103,9 +108,25 @@ public class AddTaskActivity extends AppCompatActivity {
 
             FirebaseAuth auth=FirebaseAuth.getInstance();
             task1.setOwner(auth.getCurrentUser().getEmail());
+            DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
+            String key=reference.child("myTask").push().getKey();
+            task1.setKey(key);
+            reference.child("myTask").child(key).setValue(task1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful())
+                    {
+                        Toast.makeText(AddTaskActivity.this, "ADD SUCCEFUL",Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(AddTaskActivity.this, "ADD faild",Toast.LENGTH_SHORT).show();
+                    }
 
-            String key=
-             task1.setKey(key);
+                }
+            });
+
+
 
 
 
