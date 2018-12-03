@@ -101,9 +101,9 @@ public class SignUp extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(SignUp.this,LogInActivity.class);
-                startActivity(i);
-            }
+               Intent i = new Intent(SignUp.this,LogInActivity.class);
+               startActivity(i);
+           }
         });
     }
 }
