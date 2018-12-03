@@ -35,6 +35,8 @@ public class SignUp extends AppCompatActivity {
         etEmail=findViewById(R.id.etEmail);
         etPassword=findViewById(R.id.etPassword);
         btnSave=findViewById(R.id.btnSave);
+        auth=FirebaseAuth.getInstance();
+        user=auth.getCurrentUser();
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,20 +45,18 @@ public class SignUp extends AppCompatActivity {
 
             }
         });
-        //3.
-        auth=FirebaseAuth.getInstance();
-        user=auth.getCurrentUser();//
+
     }
     // get email and passwor from the field and try to create new user
     private void dataHandler()
     {
-        boolean isOk= true; // if alla the fields filled well
+        boolean isok= true; // if alla the fields filled well
         String email= etEmail.getText().toString();
         String password= etPassword.getText().toString();
         String fName= etFirst.getText().toString();
         String lName= etLast.getText().toString();
         String phone= Phone.getText().toString();
-        boolean isok = false;
+
         if (email.length()<4 || email.indexOf('@')<0 || email.indexOf('.')<0)
         {
             etEmail.setError("worng Email");
@@ -98,12 +98,12 @@ public class SignUp extends AppCompatActivity {
                 }
             }
         });
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               Intent i = new Intent(SignUp.this,LogInActivity.class);
-               startActivity(i);
-           }
-        });
+      //  btnSave.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+       //     public void onClick(View view) {
+          //     Intent i = new Intent(SignUp.this,LogInActivity.class);
+          //     startActivity(i);
+      //     }
+      //  });
     }
 }
