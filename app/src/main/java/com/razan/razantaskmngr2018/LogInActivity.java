@@ -32,7 +32,6 @@ public class LogInActivity extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 dataHundler();
             }
         });
@@ -50,20 +49,21 @@ public class LogInActivity extends AppCompatActivity {
 
     }
     private void dataHundler() {
-        boolean isOk= true; // if alla the fields filled well
+      //  boolean isOk= true; // if alla the fields filled well
         String email= etEmail1.getText().toString();
         String password= etPassword1.getText().toString();
-        boolean isok = false;
-        if (email.length()<4 || email.indexOf('@')<0 || email.indexOf('.')<0)
-        {
-            etEmail1.setError("worng Email");
-            isok=false;
-        }
-        if (password.length()<8)
-        {
-            etPassword1.setError(" Have to be at least 8 char");
-            isok=false;
-        }
+        signIn(email, password);
+       // boolean isok = false;
+       // if (email.length()<4 || email.indexOf('@')<0 || email.indexOf('.')<0)
+       // {
+        //    etEmail1.setError("worng Email");
+        //    isok=false;
+      //  }
+      //  if (password.length()<8)
+     //   {
+       //     etPassword1.setError(" Have to be at least 8 char");
+        //    isok=false;
+      //  }
 
     }
     private void signIn(String email, String passw){
@@ -72,12 +72,15 @@ public class LogInActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
-                if(task.isSuccessful())
+                if(task.isSuccessful()) {
+                    Toast.makeText(LogInActivity.this, "logIn Successful", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(LogInActivity.this, MainTabsActivity.class);
+                    startActivity(i);
+                }
+                else
                 {
-                    Intent i = new Intent(LogInActivity.this,LogInActivity.class);
-                    startActivity(i);
-                    Intent intent = new Intent(LogInActivity.this,SignUp.class);
-                    startActivity(i);
+                   Toast.makeText(LogInActivity.this, "LogIn failed"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                   task.getException().printStackTrace();
 
                 }
 

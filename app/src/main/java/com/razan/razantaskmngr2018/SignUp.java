@@ -42,6 +42,8 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dataHandler();
+                Intent i = new Intent(SignUp.this,LogInActivity.class);
+                startActivity(i);
 
             }
         });
@@ -101,8 +103,7 @@ public class SignUp extends AppCompatActivity {
       //  btnSave.setOnClickListener(new View.OnClickListener() {
           //  @Override
        //     public void onClick(View view) {
-          //     Intent i = new Intent(SignUp.this,LogInActivity.class);
-          //     startActivity(i);
+
       //     }
       //  });
     }
