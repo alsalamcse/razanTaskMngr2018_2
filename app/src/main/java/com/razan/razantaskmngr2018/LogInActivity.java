@@ -13,11 +13,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LogInActivity extends AppCompatActivity {
     private EditText etEmail1,etPassword1;
     private Button btnSignIn,btnSignUp;
     private FirebaseAuth auth;
+    private FirebaseUser user;
 
 
     @Override
@@ -28,6 +30,8 @@ public class LogInActivity extends AppCompatActivity {
         etPassword1=findViewById(R.id.etPassward1);
         btnSignIn=findViewById(R.id.btnSignIn);
         btnSignUp=findViewById(R.id.btnSignUp);
+        auth=FirebaseAuth.getInstance();
+        user=auth.getCurrentUser();
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,26 +53,28 @@ public class LogInActivity extends AppCompatActivity {
 
     }
     private void dataHundler() {
-      //  boolean isOk= true; // if alla the fields filled well
+       boolean isok= true; // if alla the fields filled well
         String email= etEmail1.getText().toString();
         String password= etPassword1.getText().toString();
-        signIn(email, password);
-       // boolean isok = false;
-       // if (email.length()<4 || email.indexOf('@')<0 || email.indexOf('.')<0)
-       // {
-        //    etEmail1.setError("worng Email");
-        //    isok=false;
-      //  }
-      //  if (password.length()<8)
-     //   {
-       //     etPassword1.setError(" Have to be at least 8 char");
-        //    isok=false;
-      //  }
+
+        if (email.length()<4 || email.indexOf('@')<0 || email.indexOf('.')<0)
+        {
+            etEmail1.setError("worng Email");
+            isok=false;
+        }
+        if (password.length()<8) {
+            etPassword1.setError(" Have to be at least 8 char");
+            isok = false;
+        }
+        if (isok)
+        {
+            signIn(email, password);
+
+        }
 
     }
     private void signIn(String email, String passw){
-        FirebaseAuth auth=FirebaseAuth.getInstance();
-        auth.signInWithEmailAndPassword(email,passw).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        auth.signInWithEmailAndPassword(email,passw).addOnCompleteListener(LogInActivity.this,new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
@@ -76,6 +82,7 @@ public class LogInActivity extends AppCompatActivity {
                     Toast.makeText(LogInActivity.this, "logIn Successful", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(LogInActivity.this, MainTabsActivity.class);
                     startActivity(i);
+                    finish();
                 }
                 else
                 {
