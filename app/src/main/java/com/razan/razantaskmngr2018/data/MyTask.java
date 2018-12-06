@@ -11,6 +11,7 @@ public class MyTask {
     private Date createdAt;
     private Date dueDate;
     private String Owner;
+    public Object add;
 
 
     public MyTask() {
