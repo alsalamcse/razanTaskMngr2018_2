@@ -54,7 +54,7 @@
         tools:layout_editor_absoluteY="363dp" />
 
     <SeekBar
-        android:id="@+id/sB1"
+        android:id="@+id/skbrNeseccery"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="205dp"
         android:layout_height="31dp"

@@ -27,7 +27,7 @@ import java.util.IllegalFormatCodePointException;
 public class AddTaskActivity extends AppCompatActivity {
     private EditText etTitle,etTask,etDueDate;
     private TextView tvImportant,tvNeseccery;
-    private SeekBar sB1,sB2;
+    private SeekBar skbrNeseccery,skbarImportant;
     private Button btSave, btDatePicker;
     private int mYear, mMonth, mDay;
 
@@ -40,9 +40,9 @@ public class AddTaskActivity extends AppCompatActivity {
         etDueDate=findViewById(R.id.etDueDate);
         tvImportant=findViewById(R.id.tvImportant);
         tvNeseccery=findViewById(R.id.tvNeseccery);
-        sB1=findViewById(R.id.sB1);
-        sB2=findViewById(R.id.sB2);
-        btSave=findViewById(R.id.btnSave);
+        skbrNeseccery=findViewById(R.id.skbrNeseccery);
+        skbarImportant=findViewById(R.id.skbrNeseccery);
+        btSave=findViewById(R.id.btSave);
         btDatePicker=findViewById(R.id.btDatePicker);
 
 
@@ -82,8 +82,8 @@ public class AddTaskActivity extends AppCompatActivity {
         String dueDate= etDueDate.getText().toString();
         String important=tvImportant.getText().toString();
         String neseccery = tvNeseccery.getText().toString();
-        int important1=sB1.getProgress();
-        int neseccery1=sB2.getProgress();
+        int important1=skbrNeseccery.getProgress();
+        int neseccery1=skbarImportant.getProgress();
 
         boolean isok = false;
         if (title.length()==0)
