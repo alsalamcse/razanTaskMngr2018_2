@@ -6,13 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity">
 
-    <TextView
-        android:layout_width="143dp"
-        android:layout_height="55dp"
-        android:text="Welcome to your collage"
+    <LinearLayout
+        android:layout_width="443dp"
+        android:layout_height="397dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/btnCollage"
+            android:layout_width="162dp"
+            android:layout_height="65dp"
+            android:text="Collage"
+            tools:layout_editor_absoluteX="86dp"
+            tools:layout_editor_absoluteY="260dp" />
+
+        <Button
+            android:id="@+id/ btnStudent"
+            android:layout_width="163dp"
+            android:layout_height="67dp"
+            android:text="student"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="122dp" />
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
