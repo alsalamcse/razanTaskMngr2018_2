@@ -41,14 +41,14 @@ public class LogInActivity extends AppCompatActivity {
             }
         });
 
-//        btnLogIn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i=new Intent(LogInActivity.this,studentPage.class);
-//                startActivity(i);
-//                dataHundler();
-//            }
-//        });
+//       btnLogIn.setOnClickListener(new View.OnClickListener() {
+//           @Override
+//          public void onClick(View view) {
+//               Intent i=new Intent(LogInActivity.this,studentPage.class);
+//               startActivity(i);
+//               dataHundler();
+//           }
+//       });
 
 
 

@@ -28,8 +28,8 @@
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".studentPage"
-            android:label="@string/title_activity_student_page"
+            android:name=".StudentPage1"
+            android:label="@string/title_activity_student_page1"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
