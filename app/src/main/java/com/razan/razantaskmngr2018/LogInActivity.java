@@ -41,14 +41,13 @@ public class LogInActivity extends AppCompatActivity {
             }
         });
 
-//       btnLogIn.setOnClickListener(new View.OnClickListener() {
-//           @Override
-//          public void onClick(View view) {
-//               Intent i=new Intent(LogInActivity.this,studentPage.class);
-//               startActivity(i);
-//               dataHundler();
-//           }
-//       });
+       btnLogIn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+
+             dataHundler1();
+           }
+       });
 
 
 
@@ -65,6 +64,50 @@ public class LogInActivity extends AppCompatActivity {
 
 
     }
+
+    private void dataHundler1() {
+        boolean isok= true; // if alla the fields filled well
+        String email= etEmail1.getText().toString();
+        String password= etPassword1.getText().toString();
+
+        if (email.length()<4 || email.indexOf('@')<0 || email.indexOf('.')<0)
+        {
+            etEmail1.setError("worng Email");
+            isok=false;
+        }
+        if (password.length()<8) {
+            etPassword1.setError(" Have to be at least 8 char");
+            isok = false;
+        }
+        if (isok)
+        {
+            signIn1(email, password);
+
+        }
+
+    }
+    private void signIn1(String email, String passw){
+        auth.signInWithEmailAndPassword(email,passw).addOnCompleteListener(LogInActivity.this,new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                if(task.isSuccessful()) {
+                    Toast.makeText(LogInActivity.this, "logIn Successful", Toast.LENGTH_SHORT).show();
+                    Intent i=new Intent(LogInActivity.this,StudentPage1.class);
+                    startActivity(i);
+                    finish();
+                }
+                else
+                {
+                    Toast.makeText(LogInActivity.this, "LogIn failed"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                    task.getException().printStackTrace();
+
+                }
+
+            }
+        });
+    }
+
     private void dataHundler() {
        boolean isok= true; // if alla the fields filled well
         String email= etEmail1.getText().toString();
