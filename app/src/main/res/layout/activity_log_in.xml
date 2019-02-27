@@ -31,18 +31,11 @@
         tools:layout_editor_absoluteY="101dp" />
 
     <Button
-        android:id="@+id/btnSignIn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="SignInStudent" />
-
-    <Button
         android:id="@+id/btnLogIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="SignInCollage" />
+        android:text="SignIn" />
 
     <Button
         android:id="@+id/btnSignUp"

@@ -18,21 +18,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
-        <Button
-            android:id="@+id/btnCollage"
-            android:layout_width="162dp"
-            android:layout_height="65dp"
-            android:text="Collage"
-            tools:layout_editor_absoluteX="86dp"
-            tools:layout_editor_absoluteY="260dp" />
-
-        <Button
-            android:id="@+id/ btnStudent"
-            android:layout_width="163dp"
-            android:layout_height="67dp"
-            android:text="student"
-            tools:layout_editor_absoluteX="85dp"
-            tools:layout_editor_absoluteY="122dp" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

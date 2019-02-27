@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="FirstName"
+            android:hint="full name "
             android:inputType="textPersonName"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="16dp" />
@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="LastName"
+            android:hint="Address"
             android:inputType="textPersonName"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="80dp" />
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="phone"
+            android:hint="Parking code"
             android:inputType="phone"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="139dp" />
@@ -56,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Password"
+            android:hint="password"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="292dp" />
 

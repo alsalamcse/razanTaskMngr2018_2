@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LogInActivity extends AppCompatActivity {
     private EditText etEmail1,etPassword1;
-    private Button btnSignIn,btnSignUp, btnLogIn;
+    private Button btnSignUp, btnLogIn;
     private FirebaseAuth auth;
     private FirebaseUser user;
 
@@ -28,24 +28,29 @@ public class LogInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_log_in);
         etEmail1=findViewById(R.id.etEmail1);
         etPassword1=findViewById(R.id.etPassword1);
-        btnSignIn=findViewById(R.id.btnSignIn);
         btnSignUp=findViewById(R.id.btnSignUp);
         btnLogIn=findViewById(R.id.btnLogIn);
         auth=FirebaseAuth.getInstance();
         user=auth.getCurrentUser();
+        if(auth.getCurrentUser()!=null && auth.getCurrentUser().getEmail()!=null)
+        {
+            Intent i = new Intent(LogInActivity.this, StatisticsActivity.class);
+            startActivity(i);
+        }
 
-        btnSignIn.setOnClickListener(new View.OnClickListener() {
+        btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dataHundler();
+                dataHandler();
             }
         });
 
        btnLogIn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
+               Intent i = new Intent(LogInActivity.this, StatisticsActivity.class);
+               startActivity(i);
 
-             dataHundler1();
            }
        });
 
@@ -65,51 +70,9 @@ public class LogInActivity extends AppCompatActivity {
 
     }
 
-    private void dataHundler1() {
+    private void dataHandler()
+    {
         boolean isok= true; // if alla the fields filled well
-        String email= etEmail1.getText().toString();
-        String password= etPassword1.getText().toString();
-
-        if (email.length()<4 || email.indexOf('@')<0 || email.indexOf('.')<0)
-        {
-            etEmail1.setError("worng Email");
-            isok=false;
-        }
-        if (password.length()<8) {
-            etPassword1.setError(" Have to be at least 8 char");
-            isok = false;
-        }
-        if (isok)
-        {
-            signIn1(email, password);
-
-        }
-
-    }
-    private void signIn1(String email, String passw){
-        auth.signInWithEmailAndPassword(email,passw).addOnCompleteListener(LogInActivity.this,new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-
-                if(task.isSuccessful()) {
-                    Toast.makeText(LogInActivity.this, "logIn Successful", Toast.LENGTH_SHORT).show();
-                    Intent i=new Intent(LogInActivity.this,StudentPage1.class);
-                    startActivity(i);
-                    finish();
-                }
-                else
-                {
-                    Toast.makeText(LogInActivity.this, "LogIn failed"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-                    task.getException().printStackTrace();
-
-                }
-
-            }
-        });
-    }
-
-    private void dataHundler() {
-       boolean isok= true; // if alla the fields filled well
         String email= etEmail1.getText().toString();
         String password= etPassword1.getText().toString();
 
@@ -129,25 +92,37 @@ public class LogInActivity extends AppCompatActivity {
         }
 
     }
-    private void signIn(String email, String passw){
-        auth.signInWithEmailAndPassword(email,passw).addOnCompleteListener(LogInActivity.this,new OnCompleteListener<AuthResult>() {
+    private void signIn(String email, String passw)
+    {
+        auth = FirebaseAuth.getInstance();
+        auth.signInWithEmailAndPassword(email, passw).addOnCompleteListener(LogInActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-
-                if(task.isSuccessful()) {
-                    Toast.makeText(LogInActivity.this, "logIn Successful", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(LogInActivity.this, MainTabsActivity.class);
-                    startActivity(i);
-                    finish();
-                }
-                else
+                if (task.isSuccessful())
                 {
-                   Toast.makeText(LogInActivity.this, "LogIn failed"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-                   task.getException().printStackTrace();
-
+                    Toast.makeText(LogInActivity.this, "signIn Successful", Toast.LENGTH_SHORT).show();
+                    finish();
+                    Intent i = new Intent(LogInActivity.this, StatisticsActivity.class);
+                    startActivity(i);
+                } else
+                {
+                    Toast.makeText(LogInActivity.this, "LogIn faild" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    task.getException().printStackTrace();
                 }
-
             }
+
+
         });
+
+
     }
+
+
 }
+
+
+
+
+
+
+
