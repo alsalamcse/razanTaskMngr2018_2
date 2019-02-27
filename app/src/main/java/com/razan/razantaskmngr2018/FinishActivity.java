@@ -6,28 +6,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class EnterClientActivity extends AppCompatActivity {
-    private Button btnSave;
+public class FinishActivity extends AppCompatActivity {
+    private Button btnEnter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_enter_client);
-        btnSave = findViewById(R.id.btnSave);
+        setContentView(R.layout.activity_finish);
+        btnEnter = findViewById(R.id.btnEnter);
 
-
-
-        btnSave.setOnClickListener(new View.OnClickListener() {
+        btnEnter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(EnterClientActivity.this, EnterClientActivity.class);
-                startActivity(i);
+                Intent intent = new Intent(EnterClientActivity.this, SplashActivity.class);
+                startActivity(intent);
             }
         });
     }
 }
-
-
-
-
-

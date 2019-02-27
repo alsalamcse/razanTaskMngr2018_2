@@ -6,9 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
     private Button btExit;
     private Button btEnter;
+    private FirebaseAuth auth;
+    private FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +21,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btEnter=findViewById(R.id.btEnter);
         btExit=findViewById(R.id.btExit);
+        auth=FirebaseAuth.getInstance();
+        user=auth.getCurrentUser();
+        if(auth.getCurrentUser()!=null && auth.getCurrentUser().get!=null)
+        {
+            Intent i = new Intent(MainActivity.this, FinishActivity.class);
+            startActivity(i);
+        }
 
 
 

@@ -21,7 +21,7 @@ public class EnterActivity extends AppCompatActivity {
         btnClient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EnterActivity.this, LogInActivity.class);
+                Intent intent = new Intent(EnterActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

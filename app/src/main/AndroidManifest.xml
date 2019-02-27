@@ -24,7 +24,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".EnterClientActivity" />
         <activity android:name=".ExitActivity" />
-        <activity android:name=".EndActivity"></activity>
+        <activity android:name=".EndActivity" />
+        <activity android:name=".FinishActivity"></activity>
     </application>
 
 </manifest>
