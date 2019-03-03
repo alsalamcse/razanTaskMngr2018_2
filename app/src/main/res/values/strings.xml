@@ -12,4 +12,5 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_student_page">studentPage</string>
     <string name="title_activity_student_page1">StudentPage1</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

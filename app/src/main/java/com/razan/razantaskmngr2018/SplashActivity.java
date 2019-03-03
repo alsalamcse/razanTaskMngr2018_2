@@ -33,8 +33,8 @@ public class SplashActivity extends AppCompatActivity {
         btnPark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SplashActivity.this, LogInActivity.class);
-                startActivity(intent);
+                Intent i = new Intent(SplashActivity.this, LogInActivity.class);
+                startActivity(i);
             }
         });
 

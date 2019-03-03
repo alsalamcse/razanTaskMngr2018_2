@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".StatisticsActivity">
 
+    <EditText
+        android:id="@+id/etcost"
+        android:layout_width="217dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Price of parking"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="14dp"
+        tools:layout_editor_absoluteY="30dp" />
 </android.support.constraint.ConstraintLayout>

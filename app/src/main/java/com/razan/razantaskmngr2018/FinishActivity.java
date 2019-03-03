@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class FinishActivity extends AppCompatActivity {
     private Button btnEnter;
@@ -18,7 +19,8 @@ public class FinishActivity extends AppCompatActivity {
         btnEnter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EnterClientActivity.this, SplashActivity.class);
+                Toast.makeText(FinishActivity.this, "Enter Successful", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(FinishActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
