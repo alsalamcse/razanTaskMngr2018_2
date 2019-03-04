@@ -4,7 +4,9 @@ public class MyParking {
     private String id;
     private String name;
     private String address;
-    private String cost;
+    private double cost;
+    private String code;
+
 
 
     public String getId() {
@@ -27,7 +29,7 @@ public class MyParking {
         return address;
     }
 
-    public String getCost() {
+    public double getCost() {
         return cost;
     }
 
@@ -35,7 +37,15 @@ public class MyParking {
         this.address = address;
     }
 
-    public void setCost(String cost) {
+    public void setCost(double cost) {
         this.cost = cost;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

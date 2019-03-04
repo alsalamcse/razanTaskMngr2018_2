@@ -26,7 +26,7 @@
         <activity android:name=".LogInActivity" />
         <activity android:name=".SignUp" />
         <activity android:name=".EnterActivity" />
-        <activity android:name=".StatisticsActivity" />
+        <activity android:name=".AddParkActivity" />
         <activity android:name=".GpsActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".EnterClientActivity" />
@@ -45,6 +45,13 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <activity
+            android:name=".ParkingActivity"
+            android:label="@string/title_activity_parking"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
     </application>
 
 </manifest>

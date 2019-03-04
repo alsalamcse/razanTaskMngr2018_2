@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Calendar;
+
 public class EnterClientActivity extends AppCompatActivity {
     private Button btnSave;
 
@@ -14,6 +16,10 @@ public class EnterClientActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_client);
         btnSave = findViewById(R.id.btnSave);
+
+        Calendar cal = Calendar.getInstance();//alse3h
+
+
 
 
 

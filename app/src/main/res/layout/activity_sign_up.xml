@@ -12,6 +12,30 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/etFirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="FirstName"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etLast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="LastName"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="phone"
+            android:inputType="textPersonName" />
+
+        <EditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,6 +61,7 @@
             android:text="SAVE"
             tools:layout_editor_absoluteX="280dp"
             tools:layout_editor_absoluteY="447dp" />
+
     </LinearLayout>
 
 </LinearLayout>

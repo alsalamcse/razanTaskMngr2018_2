@@ -25,9 +25,9 @@
             app:srcCompat="@android:drawable/ic_lock_power_off" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView2"
             android:layout_width="426dp"
-            android:layout_height="73dp"
+            android:layout_height="109dp"
             android:layout_marginBottom="334dp"
             android:text='thank you for using the "parking" application'
             android:textAlignment="center"
@@ -36,7 +36,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textView"
