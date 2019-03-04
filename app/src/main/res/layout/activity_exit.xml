@@ -6,4 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".ExitActivity">
 
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="125dp"
+        android:layout_height="45dp"
+        android:text="price:"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="388dp" />
+
+    <EditText
+        android:id="@+id/etPrice2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="price"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="135dp"
+        tools:layout_editor_absoluteY="387dp" />
 </android.support.constraint.ConstraintLayout>
