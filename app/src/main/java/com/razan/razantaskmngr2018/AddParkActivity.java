@@ -71,7 +71,7 @@ public class AddParkActivity extends AppCompatActivity {
                 else{
                     Toast.makeText(AddParkActivity.this, "add faild", Toast.LENGTH_SHORT).show();
             }
-            
+
 
 
             }

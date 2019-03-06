@@ -6,9 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.razan.razantaskmngr2018.MapActivity.OnListFragmentInteractionListener;
 import com.razan.razantaskmngr2018.data.MyParking;
-import com.razan.razantaskmngr2018.dummy.DummyContent.DummyItem;
 
 import java.util.List;
 

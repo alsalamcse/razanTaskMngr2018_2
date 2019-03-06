@@ -19,7 +19,8 @@ public class EndActivity extends AppCompatActivity {
         setContentView(R.layout.end_activity);
         textView = findViewById(R.id.textView);
         textView2= findViewById(R.id.textView2);
-         imageButton= findViewById(R.id.imageButton);
+         imageButton= findViewById(R.id.imageButton
+         );
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
