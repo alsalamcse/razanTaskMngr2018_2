@@ -27,7 +27,6 @@
         <activity android:name=".SignUp" />
         <activity android:name=".EnterActivity" />
         <activity android:name=".AddParkActivity" />
-        <activity android:name=".GpsActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".EnterClientActivity" />
         <activity android:name=".ExitActivity" />
