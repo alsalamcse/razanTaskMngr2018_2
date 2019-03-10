@@ -13,12 +13,12 @@
     tools:context=".MapsActivity" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btEnter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="296dp"
-        android:layout_marginTop="463dp"
-        android:text="Button" />
+        android:layout_marginStart="290dp"
+        android:layout_marginTop="461dp"
+        android:text="Continue" />
 </RelativeLayout>

@@ -8,15 +8,15 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class FinishActivity extends AppCompatActivity {
-    private Button btnEnter;
+    private Button btEnter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish);
-        btnEnter = findViewById(R.id.btnEnter);
+        btEnter = findViewById(R.id.btEnter);
 
-        btnEnter.setOnClickListener(new View.OnClickListener() {
+        btEnter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(FinishActivity.this, "Enter Successful", Toast.LENGTH_SHORT).show();
