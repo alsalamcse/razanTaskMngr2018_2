@@ -26,7 +26,7 @@ public class EnterClientActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(EnterClientActivity.this, EnterClientActivity.class);
+                Intent i = new Intent(EnterClientActivity.this, MainActivity.class);
                 startActivity(i);
             }
         });

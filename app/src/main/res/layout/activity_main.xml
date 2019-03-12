@@ -8,8 +8,8 @@
 
     <Button
         android:id="@+id/btEnter"
-        android:layout_width="139dp"
-        android:layout_height="57dp"
+        android:layout_width="301dp"
+        android:layout_height="72dp"
         android:layout_marginTop="101dp"
         android:text="Enter"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,12 +18,11 @@
 
     <Button
         android:id="@+id/btExit"
-        android:layout_width="138dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="305dp"
+        android:layout_height="65dp"
         android:text="EXIt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/btEnter"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463" />
+        app:layout_constraintVertical_bias="0.525" />
 </android.support.constraint.ConstraintLayout>

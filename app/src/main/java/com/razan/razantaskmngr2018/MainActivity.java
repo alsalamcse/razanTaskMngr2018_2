@@ -23,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
         btExit=findViewById(R.id.btExit);
         auth=FirebaseAuth.getInstance();
         user=auth.getCurrentUser();
-        if(auth.getCurrentUser()!=null && auth.getCurrentUser().getProviderId()!=null)//aza fayt mn 2bl efot 3alsf7a al2rsyeh.
-        {
-            Intent i = new Intent(MainActivity.this, FinishActivity.class);
-            startActivity(i);
-        }
+      //  if(auth.getCurrentUser()!=null && auth.getCurrentUser().getProviderId()!=null)//aza fayt mn 2bl efot 3alsf7a al2rsyeh.
+       // {
+       //     Intent i = new Intent(MainActivity.this, FinishActivity.class);
+       //     startActivity(i);
+     //   }
 
 
 

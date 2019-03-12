@@ -9,6 +9,28 @@
     tools:showIn="@layout/activity_parking">
 
     <Button
+        android:id="@+id/btnPark3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="park3"
+        app:layout_constraintEnd_toEndOf="@+id/btnPark2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnPark2"
+        tools:layout_editor_absoluteY="360dp" />
+
+    <Button
+        android:id="@+id/btnPark2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="park2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnPark1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnPark1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.46" />
+
+    <Button
         android:id="@+id/btnPark1"
         android:layout_width="279dp"
         android:layout_height="wrap_content"
@@ -18,19 +40,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnPark2"
-        android:layout_width="278dp"
-        android:layout_height="wrap_content"
-        android:text="park2"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="108dp" />
-
-    <Button
-        android:id="@+id/btnPark3"
-        android:layout_width="278dp"
-        android:layout_height="wrap_content"
-        android:text="park3"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="207dp" />
 </android.support.constraint.ConstraintLayout>
