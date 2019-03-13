@@ -32,8 +32,8 @@ public class ParkingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parking);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+     //   Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+     //   setSupportActionBar(toolbar);
         btnPark1 = findViewById(R.id.btnPark1);
         btnPark2 = findViewById(R.id.btnPark2);
         btnPark3 = findViewById(R.id.btnPark3);

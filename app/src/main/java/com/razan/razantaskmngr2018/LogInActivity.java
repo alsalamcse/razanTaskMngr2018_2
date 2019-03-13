@@ -32,11 +32,11 @@ public class LogInActivity extends AppCompatActivity {
         btnLogIn=findViewById(R.id.btnLogIn);
         auth=FirebaseAuth.getInstance();
         user=auth.getCurrentUser();
-        if(auth.getCurrentUser()!=null && auth.getCurrentUser().getEmail()!=null)
-        {
-            Intent i = new Intent(LogInActivity.this, ParkingActivity.class);
-            startActivity(i);
-        }
+    //    if(auth.getCurrentUser()!=null && auth.getCurrentUser().getEmail()!=null)
+   //     {
+      //      Intent i = new Intent(LogInActivity.this, ParkingActivity.class);
+     //       startActivity(i);
+     //   }
 
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +48,7 @@ public class LogInActivity extends AppCompatActivity {
        btnLogIn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               Intent i = new Intent(LogInActivity.this,ParkingActivity.class);
+               Intent i = new Intent(LogInActivity.this,AddParkActivity.class);
                startActivity(i);
 
            }

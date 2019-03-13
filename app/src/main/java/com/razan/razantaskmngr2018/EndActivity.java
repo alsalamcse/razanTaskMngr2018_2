@@ -10,7 +10,6 @@ import com.razan.razantaskmngr2018.ui.end.EndFragment;
 
 public class EndActivity extends AppCompatActivity {
     private TextView textView,textView2;
-    private ImageButton imageButton;
 
 
     @Override
@@ -19,8 +18,7 @@ public class EndActivity extends AppCompatActivity {
         setContentView(R.layout.end_activity);
         textView = findViewById(R.id.textView);
         textView2= findViewById(R.id.textView2);
-         imageButton= findViewById(R.id.imageButton
-         );
+
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()

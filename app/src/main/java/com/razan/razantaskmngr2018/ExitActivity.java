@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class ExitActivity extends AppCompatActivity {
 
     private TextView tvPrice;
-    private EditText etPrice2;
+    private TextView etPrice2;
     private Button btnOut;
 
     @Override
@@ -28,7 +28,7 @@ public class ExitActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(ExitActivity.this, "Exit Successful", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(ExitActivity.this, SplashActivity.class);
+                Intent intent = new Intent(ExitActivity.this, EndActivity.class);
                 startActivity(intent);
             }
         });
