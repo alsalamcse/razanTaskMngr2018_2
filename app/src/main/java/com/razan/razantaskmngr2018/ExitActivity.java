@@ -40,7 +40,7 @@ public class ExitActivity extends AppCompatActivity {
             }
         });
 
-        
+
 
 
     }
