@@ -9,6 +9,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.razan.razantaskmngr2018.data.MyParking;
+
 public class ExitActivity extends AppCompatActivity {
 
     private TextView tvPrice;
@@ -19,9 +26,9 @@ public class ExitActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exit);
-        tvPrice=findViewById(R.id.tvPrice);
-        etPrice2=findViewById(R.id.etPrice2);
-        btnOut=findViewById(R.id.btnOut);
+        tvPrice = findViewById(R.id.tvPrice);
+        etPrice2 = findViewById(R.id.etPrice2);
+        btnOut = findViewById(R.id.btnOut);
 
 
         btnOut.setOnClickListener(new View.OnClickListener() {
@@ -32,6 +39,8 @@ public class ExitActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        
 
 
     }

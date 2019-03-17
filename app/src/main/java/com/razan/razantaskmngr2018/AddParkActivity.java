@@ -43,36 +43,40 @@ public class AddParkActivity extends AppCompatActivity {
     }
 
     private void dataHandler() {
-        String name=etName.getText().toString();
-        String adress=etAddress.getText().toString();
-        String cost=etcost.getText().toString(); //ast5raj als3er
-        double d=Double.parseDouble(cost); //t7wel mn string ldouble
-        String code=etCode.getText().toString(); //ast5raj als3er
-       //double c=Double.parseDouble(code); //t7wel mn string ldouble
-         MyParking parking=new MyParking();
-        parking.setName(name);
-        parking.setAddress(adress);
-        parking.setCost(d);
-        parking.setCode(code);
-        DatabaseReference reference=FirebaseDatabase.getInstance().getReference();
-        String key=reference.child("MyParking").push().getKey();
-        reference.child("MyParking").child(key).setValue(parking).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
-                    Toast.makeText(AddParkActivity.this, "add successful", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(AddParkActivity.this, EnterActivity.class);
-                    startActivity(intent);
+        if (etName.length() != 0 && etAddress.length() != 0 &&etcost.length() != 0 && etCode.length() != 0 ) {
+            String name = etName.getText().toString();
+            String adress = etAddress.getText().toString();
+            String cost = etcost.getText().toString(); //ast5raj als3er
+            double d = Double.parseDouble(cost); //t7wel mn string ldouble
+            String code = etCode.getText().toString(); //ast5raj als3er
+            //double c=Double.parseDouble(code); //t7wel mn string ldouble
+            MyParking parking = new MyParking();
+            parking.setName(name);
+            parking.setAddress(adress);
+            parking.setCost(d);
+            parking.setCode(code);
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+            String key = reference.child("MyParking").push().getKey();
+            reference.child("MyParking").child(key).setValue(parking).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(AddParkActivity.this, "add successful", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(AddParkActivity.this, EnterActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(AddParkActivity.this, "add faild", Toast.LENGTH_SHORT).show();
+                    }
+
+
                 }
-                else{
-                    Toast.makeText(AddParkActivity.this, "add faild", Toast.LENGTH_SHORT).show();
-            }
-
-
-
-            }
-        });
-
+            });
+        }else {
+            etName.setError("Enter Name");
+            etAddress.setError("Enter Address");
+            etcost.setError("Enter Cost");
+            etCode.setError("Enter Code");
+        }
     }
 
 }

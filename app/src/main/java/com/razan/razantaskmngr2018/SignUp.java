@@ -42,8 +42,6 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dataHandler();
-                Intent i = new Intent(SignUp.this,LogInActivity.class);
-                startActivity(i);
 
             }
         });
@@ -68,6 +66,11 @@ public class SignUp extends AppCompatActivity {
         {
             etPassword.setError(" Have to be at least 8 char");
             isok=false;
+        }
+        if (fName.length() == 0 & lName.length() ==0 && phone.length() == 0){
+            etFirst.setError("Enter First Name");
+            etLast.setError("Enter Last Name");
+            Phone.setError("Enter Phone number");
         }
         if (isok)
         {
