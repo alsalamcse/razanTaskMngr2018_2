@@ -15,6 +15,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.razan.razantaskmngr2018.data.MyParking;
+import com.razan.razantaskmngr2018.data.MyTask;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExitActivity extends AppCompatActivity {
 
@@ -34,6 +38,7 @@ public class ExitActivity extends AppCompatActivity {
         btnOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+               readParkingInfo();
                 Toast.makeText(ExitActivity.this, "Exit Successful", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(ExitActivity.this, EndActivity.class);
                 startActivity(intent);
@@ -44,4 +49,30 @@ public class ExitActivity extends AppCompatActivity {
 
 
     }
+    private List<MyParking> readParkingInfo()
+    {
+        final ArrayList<MyParking> parking=new ArrayList<>();
+        //reference to the database root
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
+
+        reference.child("MyParking").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+                for (DataSnapshot d : dataSnapshot.getChildren())
+                {
+                    MyParking value=d.getValue(MyParking.class);
+                    parking.add(value);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        return parking;
+    }
+
 }

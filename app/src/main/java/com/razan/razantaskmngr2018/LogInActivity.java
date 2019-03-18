@@ -102,7 +102,7 @@ public class LogInActivity extends AppCompatActivity {
                 {
                     Toast.makeText(LogInActivity.this, "signIn Successful", Toast.LENGTH_SHORT).show();
                     finish();
-                    Intent i = new Intent(LogInActivity.this, AddParkActivity.class);
+                    Intent i = new Intent(LogInActivity.this, ParkingActivity.class);
                     startActivity(i);
                 } else
                 {

@@ -2,4 +2,5 @@
 <resources>
     <item name="btnEnter" type="id" />
     <item name="etCost1" type="id" />
+    <item name="btnInfo" type="id" />
 </resources>
