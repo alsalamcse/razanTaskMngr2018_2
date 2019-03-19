@@ -62,7 +62,7 @@ public class AddParkActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(AddParkActivity.this, "add successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(AddParkActivity.this, EnterActivity.class);
+                        Intent intent = new Intent(AddParkActivity.this, ParkingActivity.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(AddParkActivity.this, "add faild", Toast.LENGTH_SHORT).show();

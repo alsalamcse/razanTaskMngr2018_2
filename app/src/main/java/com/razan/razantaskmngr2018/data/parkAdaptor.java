@@ -26,8 +26,8 @@ public class parkAdaptor extends ArrayAdapter<MyParking> {
 //to get current data object
         MyParking m=getItem(position);//return data object number "position"
 //get referances for eact item at the xml ui
-        TextView tvName=convertView.findViewById(R.id.tvCost);
-        TextView tvCost=convertView.findViewById(R.id.tvCost);
+        TextView tvName=convertView.findViewById(R.id.tvName);
+        TextView tvCost=convertView.findViewById(R.id.tvName);
         TextView tvCode=convertView.findViewById(R.id.tvCode);
         TextView tvAddress=convertView.findViewById(R.id.tvAddress);
         ImageButton btnInfo =convertView.findViewById(R.id.btnInfo);

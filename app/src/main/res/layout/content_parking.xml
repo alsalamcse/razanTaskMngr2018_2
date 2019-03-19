@@ -28,7 +28,8 @@
         app:layout_constraintEnd_toEndOf="@+id/btnPark2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/btnPark2"
-        tools:layout_editor_absoluteY="337dp" />
+        tools:layout_editor_absoluteY="337dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnPark1"
