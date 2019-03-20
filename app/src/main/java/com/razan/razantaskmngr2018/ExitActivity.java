@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,6 +27,9 @@ public class ExitActivity extends AppCompatActivity {
     private TextView tvPrice;
     private TextView etPrice2;
     private Button btnOut;
+    FirebaseAuth auth;
+    FirebaseUser user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,8 @@ public class ExitActivity extends AppCompatActivity {
         tvPrice = findViewById(R.id.tvPrice);
         etPrice2 = findViewById(R.id.etPrice2);
         btnOut = findViewById(R.id.btnOut);
+
+
 
 
         btnOut.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +54,17 @@ public class ExitActivity extends AppCompatActivity {
 
 
 
+
+    }
+
+    public void AddPrice(){
+
+
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
+        String id= auth.getUid();
+       // reference.child("MyParking").child(id).child("cost").setValue(etPrice2.getText());
+
+                etPrice2.setText((CharSequence) reference.child("MyParking").child(id).child("cost").setValue(etPrice2.getText()));
 
     }
     private List<MyParking> readParkingInfo()

@@ -20,7 +20,7 @@ public class FinishActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(FinishActivity.this, "Enter Successful", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(FinishActivity.this, MainActivity.class);
+                Intent intent = new Intent(FinishActivity.this,MainActivity.class);
                 startActivity(intent);
             }
         });

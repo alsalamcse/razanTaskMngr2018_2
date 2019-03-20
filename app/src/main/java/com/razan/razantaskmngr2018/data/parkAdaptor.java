@@ -30,7 +30,7 @@ public class parkAdaptor extends ArrayAdapter<MyParking> {
         TextView tvCost=convertView.findViewById(R.id.tvCost);
         TextView tvCode=convertView.findViewById(R.id.tvCode);
         TextView tvAddress=convertView.findViewById(R.id.tvAddress);
-        ImageButton btnInfo =convertView.findViewById(R.id.btnInfo);
+       // ImageButton imageButton=convertView.findViewById(R.id.imageButton);
 //put the data of the object on the view
         tvName.setText(m.getName());
         tvAddress.setText(m.getAddress());

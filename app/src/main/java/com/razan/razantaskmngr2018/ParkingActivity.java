@@ -66,8 +66,8 @@ public class ParkingActivity extends AppCompatActivity {
 
     private final void getPark() {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-        reference.child("MyParking");
-        reference.addValueEventListener(new ValueEventListener() {
+//        reference.child("MyParking");
+        reference.child("MyParking").addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
