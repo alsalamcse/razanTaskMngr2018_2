@@ -45,8 +45,10 @@ public class ParkingActivity extends AppCompatActivity {
         imSave = findViewById(R.id.imSave);
           // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
            //setSupportActionBar(toolbar);
+        parkAdaptor=new parkAdaptor(getBaseContext(),R.layout.park_item);
+        lstPark.setAdapter(parkAdaptor);
 
-
+        getPark();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener()
@@ -64,7 +66,8 @@ public class ParkingActivity extends AppCompatActivity {
 
     private final void getPark() {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-        reference.child("MyParking").addValueEventListener(new ValueEventListener() {
+        reference.child("MyParking");
+        reference.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

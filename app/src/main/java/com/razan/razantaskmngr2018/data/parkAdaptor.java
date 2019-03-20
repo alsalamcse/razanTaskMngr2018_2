@@ -20,14 +20,14 @@ public class parkAdaptor extends ArrayAdapter<MyParking> {
     public View getView(int position,  View convertView, ViewGroup parent)
     {
         if (convertView==null)
-        return super.getView(position, convertView, parent);
-        convertView=LayoutInflater.from(getContext())
-                .inflate(R.layout.park_item,parent,false);
+            convertView=LayoutInflater.from(getContext())
+                    .inflate(R.layout.park_item,parent,false);
+
 //to get current data object
         MyParking m=getItem(position);//return data object number "position"
 //get referances for eact item at the xml ui
         TextView tvName=convertView.findViewById(R.id.tvName);
-        TextView tvCost=convertView.findViewById(R.id.tvName);
+        TextView tvCost=convertView.findViewById(R.id.tvCost);
         TextView tvCode=convertView.findViewById(R.id.tvCode);
         TextView tvAddress=convertView.findViewById(R.id.tvAddress);
         ImageButton btnInfo =convertView.findViewById(R.id.btnInfo);
@@ -35,7 +35,7 @@ public class parkAdaptor extends ArrayAdapter<MyParking> {
         tvName.setText(m.getName());
         tvAddress.setText(m.getAddress());
         tvCode.setText(m.getCode());
-        tvCost.setText((int) m.getCost());
+        tvCost.setText(""+ m.getCost());
         return convertView;
     }
 }
